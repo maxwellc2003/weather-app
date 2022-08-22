@@ -1,0 +1,36 @@
+.sections {
+    border: 3px solid black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.row {
+    margin: 10px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.results {
+    margin-top: 10px;
+    padding: 20px;
+}
