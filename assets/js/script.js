@@ -94,7 +94,7 @@ buttonEl.addEventListener("click", function () {
     card5El.appendChild(card5HumidityEl)
 
     if (cityInput.length) {
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=4b7771966b72932cdb6e3f82d9e9915b")
+        fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=4b7771966b72932cdb6e3f82d9e9915b")
             .then(response => response.json())
             .then((data) => {
                 fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + data[0].lat + "&lon=" + data[0].lon + "&appid=4b7771966b72932cdb6e3f82d9e9915b")
