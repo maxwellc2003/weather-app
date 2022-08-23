@@ -1,7 +1,3 @@
-.sections {
-    border: 3px solid black;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -14,10 +10,13 @@ body {
     padding: 20px;
     margin: 10px;
     text-align: center;
+    background-color: #3c47a8;
+    color: white;
 }
 
 .row {
     margin: 10px;
+    padding-top: 10px;
 }
 
 .search {
@@ -25,12 +24,90 @@ body {
     flex-direction: column;
 }
 
+.search-history {
+    list-style: none;
+    padding: 5px 0 5px 0;
+}
+
+.search-history li {
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    background-color: grey;
+    color: black;
+    font-weight: 600;
+}
+
 .line {
     border: 1px solid black;
     margin: 10px;
 }
 
-.results {
+.results-1 {
+    padding: 20px
+}
+
+.results-2 {
     margin-top: 10px;
-    padding: 20px;
+    padding: 0 20px 20px 0;
+    display: flex;
+}
+
+.results-1 h4 {
+    margin: 15px 0px 15px 0;
+    font-weight: 700;
+}
+
+.card {
+    margin: 0 50px 0 0;
+    width: 200px;
+    background-color: #3c47a8;
+}
+
+.forecast-title {
+    margin: 15px 0 0 0;
+}
+
+.borderr {
+    border: 3px solid black;
+}
+
+.city {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 5px;
+    margin: 15px 0 5px 0;
+    background-color: hsla(240, 47%, 52%, 0.822);
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.font {
+    font-weight: 700;
+}
+
+.card h5 {
+    align-items: center;
+    margin: 15px 0 25px 10px;
+    color: white;
+}
+
+.button:hover {
+    background-color: #002ead;
+    transition: 0.7s;
+}
+
+.button:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 0;
 }
