@@ -2,98 +2,103 @@ var buttonEl = document.querySelector(".button")
 var cityInputEl = document.querySelector(".city")
 var ulEl = document.querySelector(".search-history")
 HISTORY_KEY = ""
-var citInput = ""
+var cityinput = ""
 var inputs = JSON.parse(localStorage.getItem(HISTORY_KEY)) ?? [];
+var results1El = document.querySelector(".appear-1")
+var results2El = document.querySelector(".appear-2")
 
 buttonEl.addEventListener("click", function () {
-    var containerEl = document.querySelector(".current")
-    containerEl.classList.add("borderr")
-    var h2El = document.createElement("h2")
-    var tempEl = document.createElement("h4")
-    var milesEl = document.createElement("h4")
-    var humidityEl = document.createElement("h4")
-    var iconEl = document.createElement("h4")
-
     cityInput = cityInputEl.value
     cityInputEl.value = "";
 
-    // 5 day forecast
-    cardContainerEl = document.querySelector(".results-2")
-    forecastTitleEl = document.querySelector(".forecast-title")
-    forecastTitleEl.textContent = "5-Day Forecast:"
-
-    card1El = document.createElement("section")
-    card1El.classList.add("card")
-    card1DateEl = document.createElement("h5")
-    card1DateEl.textContent = moment().add(1, 'days').format(' (M/DD/YYYY)')
-    card1TempEl = document.createElement("h5")
-    card1WindEl = document.createElement("h5")
-    card1HumidityEl = document.createElement("h5")
-
-    card2El = document.createElement("section")
-    card2El.classList.add("card")
-    card2DateEl = document.createElement("h5")
-    card2DateEl.textContent = moment().add(2, 'days').format(' (M/DD/YYYY)')
-    card2TempEl = document.createElement("h5")
-    card2WindEl = document.createElement("h5")
-    card2HumidityEl = document.createElement("h5")
-
-    card3El = document.createElement("section")
-    card3El.classList.add("card")
-    card3DateEl = document.createElement("h5")
-    card3DateEl.textContent = moment().add(3, 'days').format(' (M/DD/YYYY)')
-    card3TempEl = document.createElement("h5")
-    card3WindEl = document.createElement("h5")
-    card3HumidityEl = document.createElement("h5")
-
-    card4El = document.createElement("section")
-    card4El.classList.add("card")
-    card4DateEl = document.createElement("h5")
-    card4DateEl.textContent = moment().add(4, 'days').format(' (M/DD/YYYY)')
-    card4TempEl = document.createElement("h5")
-    card4WindEl = document.createElement("h5")
-    card4HumidityEl = document.createElement("h5")
-
-    card5El = document.createElement("section")
-    card5El.classList.add("card")
-    card5DateEl = document.createElement("h5")
-    card5DateEl.textContent = moment().add(5, 'days').format(' (M/DD/YYYY)')
-    card5TempEl = document.createElement("h5")
-    card5WindEl = document.createElement("h5")
-    card5HumidityEl = document.createElement("h5")
-
-    cardContainerEl.appendChild(card1El)
-    cardContainerEl.appendChild(card2El)
-    cardContainerEl.appendChild(card3El)
-    cardContainerEl.appendChild(card4El)
-    cardContainerEl.appendChild(card5El)
-
-    card1El.appendChild(card1DateEl)
-    card1El.appendChild(card1TempEl)
-    card1El.appendChild(card1WindEl)
-    card1El.appendChild(card1HumidityEl)
-
-    card2El.appendChild(card2DateEl)
-    card2El.appendChild(card2TempEl)
-    card2El.appendChild(card2WindEl)
-    card2El.appendChild(card2HumidityEl)
-
-    card3El.appendChild(card3DateEl)
-    card3El.appendChild(card3TempEl)
-    card3El.appendChild(card3WindEl)
-    card3El.appendChild(card3HumidityEl)
-
-    card4El.appendChild(card4DateEl)
-    card4El.appendChild(card4TempEl)
-    card4El.appendChild(card4WindEl)
-    card4El.appendChild(card4HumidityEl)
-
-    card5El.appendChild(card5DateEl)
-    card5El.appendChild(card5TempEl)
-    card5El.appendChild(card5WindEl)
-    card5El.appendChild(card5HumidityEl)
-
     if (cityInput.length) {
+        buttonEl.textContent = "Reload"
+
+        var containerEl = document.querySelector(".current")
+        containerEl.classList.add("borderr")
+        var h2El = document.createElement("h2")
+        var tempEl = document.createElement("h4")
+        var milesEl = document.createElement("h4")
+        var humidityEl = document.createElement("h4")
+        var iconEl = document.createElement("h4")
+
+        // 5 day forecast
+        cardContainerEl = document.querySelector(".results-2")
+        forecastTitleEl = document.querySelector(".forecast-title")
+        forecastTitleEl.textContent = "5-Day Forecast:"
+
+        card1El = document.createElement("section")
+        card1El.classList.add("card")
+        card1DateEl = document.createElement("h5")
+        card1DateEl.textContent = moment().add(1, 'days').format(' (M/DD/YYYY)')
+        card1TempEl = document.createElement("h5")
+        card1WindEl = document.createElement("h5")
+        card1HumidityEl = document.createElement("h5")
+
+        card2El = document.createElement("section")
+        card2El.classList.add("card")
+        card2DateEl = document.createElement("h5")
+        card2DateEl.textContent = moment().add(2, 'days').format(' (M/DD/YYYY)')
+        card2TempEl = document.createElement("h5")
+        card2WindEl = document.createElement("h5")
+        card2HumidityEl = document.createElement("h5")
+
+        card3El = document.createElement("section")
+        card3El.classList.add("card")
+        card3DateEl = document.createElement("h5")
+        card3DateEl.textContent = moment().add(3, 'days').format(' (M/DD/YYYY)')
+        card3TempEl = document.createElement("h5")
+        card3WindEl = document.createElement("h5")
+        card3HumidityEl = document.createElement("h5")
+
+        card4El = document.createElement("section")
+        card4El.classList.add("card")
+        card4DateEl = document.createElement("h5")
+        card4DateEl.textContent = moment().add(4, 'days').format(' (M/DD/YYYY)')
+        card4TempEl = document.createElement("h5")
+        card4WindEl = document.createElement("h5")
+        card4HumidityEl = document.createElement("h5")
+
+        card5El = document.createElement("section")
+        card5El.classList.add("card")
+        card5DateEl = document.createElement("h5")
+        card5DateEl.textContent = moment().add(5, 'days').format(' (M/DD/YYYY)')
+        card5TempEl = document.createElement("h5")
+        card5WindEl = document.createElement("h5")
+        card5HumidityEl = document.createElement("h5")
+
+        cardContainerEl.appendChild(card1El)
+        cardContainerEl.appendChild(card2El)
+        cardContainerEl.appendChild(card3El)
+        cardContainerEl.appendChild(card4El)
+        cardContainerEl.appendChild(card5El)
+
+        card1El.appendChild(card1DateEl)
+        card1El.appendChild(card1TempEl)
+        card1El.appendChild(card1WindEl)
+        card1El.appendChild(card1HumidityEl)
+
+        card2El.appendChild(card2DateEl)
+        card2El.appendChild(card2TempEl)
+        card2El.appendChild(card2WindEl)
+        card2El.appendChild(card2HumidityEl)
+
+        card3El.appendChild(card3DateEl)
+        card3El.appendChild(card3TempEl)
+        card3El.appendChild(card3WindEl)
+        card3El.appendChild(card3HumidityEl)
+
+        card4El.appendChild(card4DateEl)
+        card4El.appendChild(card4TempEl)
+        card4El.appendChild(card4WindEl)
+        card4El.appendChild(card4HumidityEl)
+
+        card5El.appendChild(card5DateEl)
+        card5El.appendChild(card5TempEl)
+        card5El.appendChild(card5WindEl)
+        card5El.appendChild(card5HumidityEl)
+
+
         fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + cityInput + "&limit=1&appid=4b7771966b72932cdb6e3f82d9e9915b")
             .then(response => response.json())
             .then((data) => {
@@ -119,7 +124,6 @@ buttonEl.addEventListener("click", function () {
                 fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + data[0].lat + "&lon=" + data[0].lon + "&limit=5&appid=4b7771966b72932cdb6e3f82d9e9915b")
                     .then(response => response.json())
                     .then((data) => {
-
                         var temp1Data = ((data.list[6].main.temp_max - 273.15) * 9 / 5 + 32).toFixed(2) + " °F";
                         card1TempEl.textContent = "Temp: " + temp1Data
                         var wind1Data = (data.list[6].wind.speed)
@@ -160,6 +164,10 @@ buttonEl.addEventListener("click", function () {
         return;
     }
 
+    buttonEl.addEventListener("click", function () {
+        location.reload();
+    })
+
     inputs.push(cityInput);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(inputs));
     renderSearchHistory()
@@ -170,11 +178,15 @@ var renderSearchHistory = function () {
     for (let i = 0; i < inputs.length; i += 1) {
         let input = inputs[i];
         let liEl = document.createElement("li");
+        liEl.classList.add("list")
         liEl.textContent = input;
         liEl.addEventListener("click", function () {
             console.log(i, input);
         });
         ulEl.appendChild(liEl);
+        if (i >= 10) {
+            return;
+        }
     }
 }
 
